@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="logo1.png" type="image/x-icon">
+  <title>Chaleira Elétrica - JF Acessórios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #060807;
+      color: #fff;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      background: linear-gradient(135deg, #FFD700, #b8860b);
+      color: #000;
+      padding: 30px 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .header h1 { margin: 0; font-size: 2em; }
+    .logo { text-align: center; margin-top: 20px; }
+    .logo img { max-width: 180px; height: auto; }
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      background: #111;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+      justify-content: center;
+    }
+    .product img {
+      width: 100%;
+      max-width: 400px;
+      object-fit: cover;
+      animation: girarAlternado 2.5s ease-in-out infinite;
+    }
+    @keyframes girarAlternado {
+      0% { transform: rotate(-5deg); }
+      50% { transform: rotate(5deg); }
+      100% { transform: rotate(-5deg); }
+    }
+    .details { flex: 1; padding: 20px; }
+    .details h2 { color: #FFD700; margin-top: 0; }
+    ul { padding-left: 20px; }
+    .price { font-size: 1.8em; color: #32cd32; margin-top: 10px; }
+    .old-price { text-decoration: line-through; color: #aaa; font-size: 1.2em; }
+    .countdown {
+      background: #ff0000;
+      color: white;
+      font-size: 1.3em;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 15px;
+      text-align: center;
+    }
+    .cta {
+  display: block;
+  background: #FFD700;
+  color: #000;
+  padding: 15px;
+  font-size: 1.3em;
+  font-weight: bold;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  animation: pulse 1.5s infinite;
+  transition: background 0.3s;
+  margin-top: 20px;
+}
+
+.cta:hover {
+  background: #e5c100;
+}
+
+.cta.mini {
+  display: inline-block;
+  background: #FFD700;
+  color: #000;
+  padding: 12px 15px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  animation: pulse 1.5s infinite;
+  transition: background 0.3s;
+}
+
+    }
+    .cta:hover, .cta.mini:hover { background: #e5c100; }
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+    }
+    .product-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .product-item {
+      background-color: #111;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      flex: 1 1 30%;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 300px;
+    }
+    .product-item img {
+      max-width: 100%;
+      max-height: 160px;
+      margin-bottom: 15px;
+      object-fit: contain;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background-color: #25d366;
+      padding: 12px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .whatsapp-float img {
+      width: 32px;
+      height: 32px;
+    }
+    .testimonials {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .testimonial {
+      flex: 1 1 30%;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,215,0,0.1);
+      font-style: italic;
+      font-size: 0.95em;
+    }
+    .testimonial span {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #FFD700;
+      font-style: normal;
+      font-size: 0.9em;
+    }
+    .badges {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: #111;
+      padding: 30px 20px;
+      border-radius: 10px;
+    }
+    .badge {
+      text-align: center;
+      color: #FFD700;
+      font-weight: bold;
+      font-size: 1em;
+    }
+    .badge img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 768px) {
+      .product, .product-grid, .testimonials {
+        flex-direction: column;
+      }
+      .product-item {
+        flex: 1 1 100%;
+      }
+    }
+    img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo"><img src="logo1.png" alt="JF Acessórios"></div>
+    <div class="header">
+      <h1>🔥 Oferta Especial: Chaleira Elétrica Inox</h1>
+      <p>Ferva água em segundos com elegância e segurança!</p>
+    </div>
+    <div class="product">
+      <img src="https://eos.com.br/wp-content/uploads/2021/12/Foto-Produto-Sem-Fundo-1.png" alt="Chaleira Elétrica">
+      <div class="details">
+        <h2>Benefícios da Chaleira</h2>
+        <ul>
+          <li>✔ Ferve água em menos de 3 minutos</li>
+          <li>✔ Design moderno em inox</li>
+          <li>✔ Desliga automaticamente</li>
+          <li>✔ Capacidade de 1,8 litros</li>
+        </ul>
+        <p class="old-price">De R$ 199,90</p>
+        <p class="price">Por apenas R$ 69,90</p>
+        <div class="countdown" id="countdown">⏳ Oferta expira em: 00:00:00</div>
+        <a href="https://shopee.com.br/product/363867060/19298185538/" class="cta" target="_blank">🛒 Comprar Agora</a>
+      </div>
+    </div>
+
+    <h2 style="text-align: center; color: #FFD700; margin-top: 50px;">Outras Ofertas Relâmpago</h2>
+    <div class="product-grid">
+      <div class="product-item">
+        <img src="chaleira vermelha.png" alt="Chaleira Elétrica">
+        <a href="https://shopee.com.br/product/363867060/23392913171/" class="cta mini" target="_blank">🛒 Comprar Agora</a>
+      </div>
+      <div class="product-item">
+        <img src="chaleira rosa.png" alt="Chaleira Elétrica">
+        <a href="https://shopee.com.br/product/363867060/18999235125/" class="cta mini" target="_blank">🛒 Comprar Agora</a>
+      </div>
+      <div class="product-item">
+        <img src="polak.png" alt="Chaleira Elétrica">
+        <a href="https://shopee.com.br/product/363867060/22598485384/" class="cta mini" target="_blank">🛒 Comprar Agora</a>
+      </div>
+    </div>
+
+    <h2 style="text-align: center; color: #FFD700; margin-top: 50px;">O que dizem nossos clientes</h2>
+    <div class="testimonials">
+      <div class="testimonial"><p>"Entrega super rápida! A chaleira é linda e ferve muito rápido. Recomendo!"</p><span>— Ana Paula, SP</span></div>
+      <div class="testimonial"><p>"Produto excelente e vendedor muito atencioso. Chegou em 2 dias!"</p><span>— Marcos Lima, RJ</span></div>
+      <div class="testimonial"><p>"Já comprei 2 vezes! Preço ótimo e qualidade maravilhosa."</p><span>— Carla Souza, MG</span></div>
+    </div>
+
+    <div class="badges" style="margin-top: 50px; margin-bottom: 40px;">
+      <div class="badge">
+        <img src="https://cdn-icons-png.flaticon.com/512/1040/1040230.png" alt="Entrega Rápida" />
+        <p>Entrega Rápida</p>
+      </div>
+      <div class="badge">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Vendedor Confiável" />
+        <p>Vendedor Confiável</p>
+      </div>
+      <div class="badge">
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Qualidade Garantida" />
+        <p>Qualidade Garantida</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/5551991525178" class="whatsapp-float" target="_blank">
+    <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-icone.png" alt="WhatsApp" />
+  </a>
+
+  <script>
+    var countDownDate = new Date();
+    countDownDate.setHours(countDownDate.getHours() + 1);
+    var x = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("countdown").innerHTML =
+        "⏳ Oferta expira em: " + hours + "h " + minutes + "m " + seconds + "s";
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "🔥 Promoção encerrada!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
