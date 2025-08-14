@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="logo1.png" type="image/x-icon">
+  <title>Chaleira Elétrica Inox - Oferta de Hoje | JF Acessórios</title>
+
+  <meta name="description" content="Chaleira elétrica inox 1,8L com desligamento automático. Entrega rápida, garantia e nota fiscal. Pague com Pix ou em até 6x. Oferta por tempo limitado.">
+  <meta name="theme-color" content="#FFD700">
+
+  <style>
+    :root{
+      --brand:#FFD700;
+      --brand-700:#e5c100;
+      --bg:#060807;
+      --card:#111;
+      --text:#fff;
+      --ok:#32cd32;
+      --muted:#aaa;
+      --danger:#ff3b30;
+    }
+    *{box-sizing:border-box}
+    body {font-family: Arial, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;margin: 0;background: var(--bg);color: var(--text);line-height:1.5;}
+    .container {max-width: 980px;margin: auto;padding: 16px;}
+    .header {text-align: center;background: linear-gradient(135deg, var(--brand), #b8860b);color: #000;padding: 28px 18px;border-radius: 12px;margin-top: 20px;}
+    .header h1 { margin: 0 0 6px; font-size: clamp(1.4rem, 2.5vw, 2rem); }
+    .header p { margin: 0; font-weight:600 }
+    .logo { text-align: center; margin-top: 16px; }
+    .logo img { max-width: 160px; height: auto; }
+
+    .trustbar{display:flex; gap:16px; justify-content:center; align-items:center;flex-wrap:wrap; margin-top:12px; font-size:.95rem;}
+    .trustbar span{display:flex; gap:6px; align-items:center; background:#00000022; padding:6px 10px; border-radius:999px}
+
+    .product {display: grid;grid-template-columns: 1fr 1fr;gap: 22px;margin-top: 24px;background: var(--card);border-radius: 12px;box-shadow: 0 0 10px rgba(255, 215, 0, 0.15);padding: 16px;}
+    .product .image-wrap{display:flex; align-items:center; justify-content:center; padding:10px;}
+    .product img {width: 100%;max-width: 420px;object-fit: contain;border-radius:10px;transition: transform .2s ease;}
+    .product img:hover{ transform: scale(1.02) }
+    .details { padding: 6px; }
+    .details h2 { color: var(--brand); margin: 0 0 10px; font-size: 1.3rem; }
+    .bullets { padding-left: 18px; margin: 8px 0 14px; }
+    .bullets li{ margin:6px 0 }
+    .specs{display:flex; gap:8px; flex-wrap:wrap; margin: 8px 0 14px;}
+    .specs span{ background:#00000033; border:1px solid #ffffff16; padding:6px 10px; border-radius:8px; font-size:.9rem }
+
+    .price-row{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;}
+    .price { font-size: 1.9rem; color: var(--ok); font-weight:800 }
+    .old-price { text-decoration: line-through; color: var(--muted); font-size: 1rem; }
+    .installments{font-size:.95rem; opacity:.9}
+
+    .countdown {background: var(--danger);color: white;font-size: 1.05rem;font-weight: bold;padding: 10px;border-radius: 8px;margin-top: 12px;text-align: center;}
+
+    .cta {display: block;background: var(--brand);color: #000;padding: 14px;font-size: 1.2rem;font-weight: bold;border-radius: 10px;text-align: center;text-decoration: none;animation: pulse 1.8s infinite;transition: background 0.25s, transform 0.08s;margin-top: 16px;}
+    .cta:hover{ background: var(--brand-700); }
+    .cta:active{ transform: translateY(1px) }
+
+    @keyframes pulse {0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);}70% { transform: scale(1.02); box-shadow: 0 0 0 14px rgba(255, 215, 0, 0);}100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);}}
+
+    .badges {display: flex;justify-content: space-around;align-items: center;flex-wrap: wrap;gap: 16px;background: var(--card);padding: 22px 16px;border-radius: 12px;margin-top: 22px;}
+    .badge {text-align: center;color: var(--brand);font-weight: bold;font-size: .98rem;min-width: 140px;}
+    .badge img { width: 56px; margin-bottom: 8px; }
+
+    .product-grid {display: grid;grid-template-columns: repeat(3,1fr);gap: 16px;margin-top: 14px;}
+    .product-item {background-color: var(--card);border-radius: 12px;padding: 14px;text-align: center;box-shadow: 0 0 10px rgba(255, 215, 0, 0.08);display: flex;flex-direction: column;justify-content: space-between;align-items: center;min-height: 280px;}
+    .product-item img {max-width: 100%;max-height: 160px;margin-bottom: 12px;object-fit: contain;}
+    .cta.mini{display:inline-block; background:var(--brand); color:#000; padding:12px 14px; font-size:1rem; font-weight:700; border-radius:10px; text-decoration:none; transition:background .25s;}
+    .cta.mini:hover{ background:var(--brand-700) }
+
+    /* preços menores só para os cards de ofertas */
+    .old-price-sm{ text-decoration: line-through; color: var(--muted); font-size: .9rem; margin: 2px 0 0; }
+    .price-sm{ font-size: 1.1rem; color: var(--ok); font-weight: 800; margin: 4px 0 6px; }
+
+    .section-title{text-align:center; color:var(--brand); margin: 38px 0 10px; font-size:1.4rem; font-weight:800}
+
+    .testimonials {display: grid;grid-template-columns: repeat(3,1fr);gap: 16px;margin-top: 12px;}
+    .testimonial {background-color: var(--card);padding: 16px;border-radius: 12px;box-shadow: 0 0 10px rgba(255,215,0,0.06);font-size: .96rem;}
+    .stars{ color: var(--brand); margin-bottom: 6px; font-size:1.05rem }
+    .verified{ font-size:.8rem; opacity:.8 }
+    .testimonial span {display: block;margin-top: 8px;font-weight: bold;color: var(--brand);font-size: .9rem;}
+
+    .payments{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:10px; opacity:.95}
+    .payments img{ height:22px; filter: grayscale(10%); }
+
+    .faq{background:var(--card); padding:18px; border-radius:12px; margin-top:16px;}
+    details{ background:#00000026; border:1px solid #ffffff10; border-radius:10px; padding:10px 12px; margin: 8px 0 }
+    summary{ cursor:pointer; font-weight:700 }
+
+    .sticky-buy {position: fixed;left: 0; right: 0; bottom: 0;background: #0b0b0bE6;border-top: 1px solid #ffffff1a;display: none;align-items: center;justify-content: center;gap: 12px;padding: 10px;z-index: 999;backdrop-filter: blur(6px);}
+    .sticky-buy .price{ font-size:1.3rem }
+    .sticky-buy .cta{ margin:0; padding:10px 14px; font-size:1rem; border-radius:8px; animation:none }
+
+    .whatsapp-float {position: fixed;bottom: 82px;right: 18px;z-index: 998;background-color: #25d366;padding: 12px;border-radius: 50%;box-shadow: 0 0 10px rgba(0,0,0,0.3);}
+    .whatsapp-float img { width: 32px; height: 32px; }
+
+    @media (max-width: 880px){
+      .product{ grid-template-columns: 1fr; }
+      .product-grid{ grid-template-columns:1fr; }
+      .testimonials{ grid-template-columns:1fr; }
+      .sticky-buy{ display:flex; }
+    }
+
+    img{ display:block; max-width:100%; height:auto }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"Chaleira Elétrica Inox 1,8L",
+    "image":["https://eos.com.br/wp-content/uploads/2021/12/Foto-Produto-Sem-Fundo-1.png"],
+    "description":"Chaleira elétrica em inox com desligamento automático, 1,8L, fervedura rápida.",
+    "brand":{"@type":"Brand","name":"JF Acessórios"},
+    "sku":"CHALEIRA-INOX-18L",
+    "offers":{
+      "@type":"Offer",
+      "priceCurrency":"BRL",
+      "price":"69.90",
+      "url":"https://shopee.com.br/product/363867060/19298185538/",
+      "availability":"https://schema.org/InStock"
+    },
+    "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"327"}
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="logo"><img src="logo1.png" alt="JF Acessórios"></div>
+
+    <div class="header" role="banner">
+      <h1>🔥 Oferta Especial: Chaleira Elétrica Inox 1,8L</h1>
+      <p>Ferva água em segundos com elegância e segurança!</p>
+      <div class="trustbar" aria-label="Sinais de confiança">
+        <span>⭐ 4,8/5 (327 avaliações)</span>
+        <span>🚚 Entrega rápida</span>
+        <span>🧾 Nota fiscal & garantia</span>
+      </div>
+    </div>
+
+    <section class="product" aria-label="Produto">
+      <div class="image-wrap">
+        <img loading="lazy" src="https://eos.com.br/wp-content/uploads/2021/12/Foto-Produto-Sem-Fundo-1.png" alt="Chaleira Elétrica Inox 1,8L com base giratória">
+      </div>
+
+      <div class="details">
+        <h2>Por que você vai gostar</h2>
+        <ul class="bullets">
+          <li>✔ Ferve água em <b>menos de 3 minutos</b></li>
+          <li>✔ Design moderno em <b>inox</b> e base giratória</li>
+          <li>✔ <b>Desligamento automático</b> e proteção contra superaquecimento</li>
+          <li>✔ <b>Capacidade 1,8L</b> — ideal para café, chá, chimarrão e macarrão instantâneo</li>
+        </ul>
+
+        <div class="specs">
+          <span>INMETRO</span><span>Garantia 3 meses</span><span>Nota fiscal</span><span>110V ou 220V</span>
+        </div>
+
+        <div class="price-row">
+          <div class="price">R$ 69,90</div>
+          <div class="old-price">R$ 199,90</div>
+          <div class="installments">ou <b>6x</b> sem juros • <b>5% OFF no Pix</b></div>
+        </div>
+
+        <div class="payments" aria-label="Informações de frete">
+  🚚 <b>Frete Grátis</b> para todo o Brasil
+</div>
+
+
+        <div class="countdown" id="countdown" aria-live="polite">⏳ Oferta expira em: 00:00:00</div>
+
+        <a class="cta" href="https://shopee.com.br/product/363867060/19298185538/" target="_blank" rel="noopener">🛒 Comprar Agora</a>
+
+        <div class="faq" aria-label="Informações">
+          <details><summary>O que vem na caixa?</summary><p>Chaleira elétrica 1,8L, base giratória, manual e nota fiscal.</p></details>
+          <details><summary>Garantia e devolução</summary><p>Garantia de 3 meses contra defeitos. Devolução em até 7 dias corridos conforme CDC.</p></details>
+          <details><summary>Prazo e frete</summary><p>Postamos em 24–48h úteis. Prazo estimado aparece na finalização da compra.</p></details>
+          <details><summary>Voltagem</summary><p>Escolha 110V ou 220V antes de finalizar a compra.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="section-title">Outras Ofertas Relâmpago</h2>
+    <div class="product-grid" role="list">
+      <div class="product-item" role="listitem">
+        <img loading="lazy" src="chaleira vermelha.png" alt="Chaleira elétrica vermelha 1,8L">
+        <!-- preços pequenos entre a foto e o botão -->
+        <p class="old-price-sm">De R$ 199,90</p>
+        <p class="price-sm">Por R$ 69,90</p>
+        <a href="https://shopee.com.br/product/363867060/23392913171/" class="cta mini" target="_blank" rel="noopener">🛒 Comprar Agora</a>
+      </div>
+      <div class="product-item" role="listitem">
+        <img loading="lazy" src="chaleira rosa.png" alt="Chaleira elétrica rosa 1,8L">
+        <p class="old-price-sm">De R$ 199,90</p>
+        <p class="price-sm">Por R$ 69,90</p>
+        <a href="https://shopee.com.br/product/363867060/18999235125/" class="cta mini" target="_blank" rel="noopener">🛒 Comprar Agora</a>
+      </div>
+      <div class="product-item" role="listitem">
+        <img loading="lazy" src="polak.png" alt="Chaleira elétrica polida 1,8L">
+        <p class="old-price-sm">De R$ 199,90</p>
+        <p class="price-sm">Por R$ 69,90</p>
+        <a href="https://shopee.com.br/product/363867060/22598485384/" class="cta mini" target="_blank" rel="noopener">🛒 Comprar Agora</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">O que dizem nossos clientes</h2>
+    <div class="testimonials" aria-label="Depoimentos">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Entrega super rápida! A chaleira é linda e ferve muito rápido. Recomendo!"</p>
+        <div class="verified">Compra verificada • 12/08/2025</div>
+        <span>— Ana Paula, SP</span>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Produto excelente e vendedor atencioso. Chegou em 2 dias!"</p>
+        <div class="verified">Compra verificada • 10/08/2025</div>
+        <span>— Marcos Lima, RJ</span>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★☆</div>
+        <p>"Já comprei 2 vezes! Preço ótimo e qualidade top."</p>
+        <div class="verified">Compra verificada • 08/08/2025</div>
+        <span>— Carla Souza, MG</span>
+      </div>
+    </div>
+
+    <div class="badges" aria-label="Selo de confiança">
+      <div class="badge">
+        <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/1040/1040230.png" alt="Ícone Entrega Rápida" />
+        <p>Entrega Rápida</p>
+      </div>
+      <div class="badge">
+        <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Ícone Vendedor Confiável" />
+        <p>Vendedor Confiável</p>
+      </div>
+      <div class="badge">
+        <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Ícone Qualidade Garantida" />
+        <p>Qualidade Garantida</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sticky-buy" aria-hidden="false">
+    <span class="price">R$ 69,90</span>
+    <a class="cta" href="https://shopee.com.br/product/363867060/19298185538/" target="_blank" rel="noopener">Comprar agora</a>
+  </div>
+
+  <a href="https://wa.me/5551991525178" class="whatsapp-float" aria-label="Fale no WhatsApp" target="_blank" rel="noopener">
+    <img loading="lazy" src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-icone.png" alt="">
+  </a>
+
+  <script>
+    (function(){
+      var countDownDate = new Date(); countDownDate.setHours(countDownDate.getHours() + 1);
+      var el = document.getElementById("countdown");
+      var t = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        if(distance < 0){ clearInterval(t); el.textContent = "🔥 Promoção encerrada!"; return; }
+        var h = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+        var m = Math.floor((distance % (1000*60*60))/(1000*60));
+        var s = Math.floor((distance % (1000*60))/1000);
+        el.textContent = "⏳ Oferta expira em: " + String(h).padStart(2,"0")+"h " + String(m).padStart(2,"0")+"m " + String(s).padStart(2,"0")+"s";
+      },1000);
+    })();
+
+    (function(){
+      const sticky = document.querySelector('.sticky-buy');
+      const cta = document.querySelector('.cta');
+      if(!sticky || !cta) return;
+      const io = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          sticky.style.display = entry.isIntersecting ? 'none' : 'flex';
+        });
+      },{threshold: 0});
+      io.observe(cta);
+    })();
+  </script>
+</body>
+</html>
